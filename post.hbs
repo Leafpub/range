@@ -1,0 +1,133 @@
+{{!-- Include the header from partials/header.hbs --}}
+{{> header}}
+
+{{!-- Switch to the post context --}}
+{{#post}}
+    {{!-- Show the post image if there is one --}}
+    <header class="cover" {{#if image}}style="background-image: url('{{url image}}');"{{/if}}>
+        <div class="content">
+            {{!-- The post title should have editable="true" here --}}
+            <h1 class="title">{{title editable="true"}}</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2 col-sm-10 col-sm-push-1">
+                {{!-- The `post_class` helper outputs useful classes for styling --}}
+                <article class="{{post_class}}">
+                    <p class="description">
+                        {{!-- Reading time --}}
+                        <span class="reading-time">
+                            {{reading_time}} min read
+                        </span>
+
+                        {{!-- Featured badge --}}
+                        {{#if featured}}
+                            <span class="featured">
+                                Featured
+                            </span>
+                        {{/if}}
+
+                        {{!-- Post date --}}
+                        <span class="date">
+                            {{date format="%B %e, %Y at %l:%M%P"}}
+                        </span>
+
+                        {{!-- Tags --}}
+                        <span class="tags">
+                            {{tags before="on " and=" and "}}
+                        </span>
+                    </p>
+
+                    {{!-- The post content should have editable="true" here --}}
+                    <div class="content">
+                        {{content editable="true"}}
+                    </div>
+
+                    {{!-- Previous & next --}}
+                    <div class="post-pagination">
+                        {{!-- Previous --}}
+                        {{#previous_post}}
+                            <div class="previous">
+                                <a href="{{post_url}}">Previous Post</a>
+                            </div>
+                        {{/previous_post}}
+
+                        {{!-- Next --}}
+                        {{#next_post}}
+                            <div class="next">
+                                <a class="btn btn-secondary" href="{{post_url}}">Next Post</a>
+                            </div>
+                        {{/next_post}}
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div class="col-md-8 col-md-push-2 col-sm-10 col-sm-push-1">
+            <div class="row">
+                <div class="footer">
+                    {{!-- Author --}}
+                    <div class="author col-md-8">
+                        {{!-- Switch to the author context --}}
+                        {{#author}}
+                            {{!-- Avatar --}}
+                            {{#if avatar}}
+                                <a href="{{author_url}}">
+                                   <img class="author-avatar" src="{{url avatar}}" alt="{{name}}">
+                                </a>
+                            {{/if}}
+
+                            {{!-- Name --}}
+                            <h4 class="author-name">
+                                <a href="{{author_url}}">{{name}}</a>
+                            </h4>
+
+                            {{!-- Bio --}}
+                            <div class="author-bio">
+                                {{bio}}
+                            </div>
+
+                            <div class="author-details">
+                                {{!-- Location --}}
+                                {{#if location}}
+                                    <span class="author-location">
+                                        <span class="icon icon-location"></span>
+                                        {{location}}
+                                    </span>
+                                {{/if}}
+
+                                {{!-- Website --}}
+                                {{#if website}}
+                                    <span class="author-website">
+                                        <span class="icon icon-link"></span>
+                                        <a href="{{website}}">{{website}}</a>
+                                    </span>
+                                {{/if}}
+                            </div>
+                        {{/author}}
+                    </div>
+
+                    {{!-- Sharing --}}
+                    <div class="share col-md-4">
+                        Share This Post<br>
+                        <a class="share-icon icon icon-twitter" href="https://twitter.com/intent/tweet?text={{encode title}}&amp;url={{encode (post_url)}}">
+                            <span class="hidden">Share on Twitter</span>
+                        </a>
+                        <a class="share-icon icon icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{encode (post_url)}}">
+                            <span class="hidden">Share on Facebook</span>
+                        </a>
+                        <a class="share-icon icon icon-googleplus" href="https://plus.google.com/share?url={{encode (post_url)}}">
+                            <span class="hidden">Share on Google+</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{{/post}}
+
+{{!-- Include the footer from partials/footer.hbs --}}
+{{> footer}}

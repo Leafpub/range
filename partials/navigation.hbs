@@ -1,0 +1,27 @@
+{{!-- Navigation menu --}}
+<div class="nav">
+
+    {{!-- Search form. The `search_url` helper points to the search page --}}
+    <form class="search" action="{{search_url}}" autocomplete="off">
+        <input type="search" name="s" placeholder="Search" class="form-control">
+    </form>
+
+    {{!-- Navigation items --}}
+    <nav>
+        {{!-- Fetch the site's navigation --}}
+        {{#navigation}}
+            {{#each items}}
+                {{!-- Output the menu item. We can use `current` to detect the current page --}}
+                <a class="nav-{{slug}} {{#if current}}current{{/if}}" href="{{url link}}">
+                    {{label}}
+                </a>
+            {{/each}}
+        {{/navigation}}
+    </nav>
+
+    {{!-- Use the `feed_url` helper to link to the RSS feed --}}
+    <a class="feed" href="{{feed_url}}">
+        RSS Feed
+    </a>
+
+</div>

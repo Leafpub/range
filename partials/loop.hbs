@@ -1,0 +1,38 @@
+{{!-- Post loop --}}
+<div class="loop">
+
+    {{!-- Loop through each post --}}
+    {{#each posts}}
+
+        <article class="{{post_class}}">
+            {{!-- Title --}}
+            <h2 class="title"><a href="{{post_url}}">{{title}}</a></h2>
+
+            {{!-- Excerpt --}}
+            <div class="excerpt">
+                {{excerpt words="50"}}&nbsp;<a class="more" href="{{post_url}}">&hellip;</a>
+            </div>
+
+            {{!-- Post meta --}}
+            <div class="meta">
+                {{!-- Switch to the author context --}}
+                {{#author}}
+                    {{#if avatar}}<img class="avatar" src="{{url avatar}}" alt="Avatar">{{/if}}
+                    <a class="author" href="{{author_url}}">{{name}}</a>
+                {{/author}}
+
+                {{!-- Tags --}}
+                <span class="tags">
+                    {{tags before="on " and=" and "}}
+                </span>
+
+                {{!-- Date --}}
+                <time class="date" datetime="{{date format="%Y-%m-%d"}}">
+                    {{date format="%B %e, %Y"}}
+                </time>
+            </div>
+        </article>
+
+    {{/each}}
+
+</div>

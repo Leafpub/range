@@ -1,0 +1,38 @@
+{{!-- Include the header from partials/header.hbs --}}
+{{> header}}
+
+{{!-- Show the cover photo --}}
+<header class="cover" {{#if @settings.cover}}style="background-image: url('{{url @settings.cover}}');"{{/if}}>
+    <div class="content">
+        {{#if query}}
+            <h1 class="title">Results for “{{query}}”</h1>
+            <div class="subtitle">{{plural pagination.total_items none="No posts found" singular="One post found" plural="% posts found"}}</div>
+        {{else}}
+            <h1 class="title">Search</h1>
+            <div class="subtitle">What are you looking for?</div>
+        {{/if}}
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-push-2 col-sm-10 col-sm-push-1">
+            <div class="text-xs-center">
+                {{!-- Include search form from partials/search-form.hbs --}}
+                {{> search-form}}
+            </div>
+
+            {{!-- If a query was passed in, show the post loop --}}
+            {{#if query}}
+                {{!-- Include the post loop from partials/loop.hbs --}}
+                {{> loop}}
+
+                {{!-- Include pagination from partials/pagination.hbs --}}
+                {{> pagination}}
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+{{!-- Include the footer from partials/footer.hbs --}}
+{{> footer}}

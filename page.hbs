@@ -1,0 +1,30 @@
+{{!-- Include the header from partials/header.hbs --}}
+{{> header}}
+
+{{!-- Switch to the post context --}}
+{{#post}}
+    {{!-- Show the post image if there is one --}}
+    <header class="cover" {{#if image}}style="background-image: url('{{url image}}');"{{/if}}>
+        <div class="content">
+            {{!-- The post title should have editable="true" here --}}
+            <h1 class="title">{{title editable="true"}}</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-push-2 col-sm-10 col-sm-push-1">
+                {{!-- The `post_class` helper outputs useful classes for styling --}}
+                <article class="{{post_class}}">
+                    {{!-- The post content should have editable="true" here --}}
+                    <div class="post-content">
+                        {{content editable="true"}}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+{{/post}}
+
+{{!-- Include the footer from partials/footer.hbs --}}
+{{> footer}}

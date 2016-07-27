@@ -1,0 +1,25 @@
+{{!-- Include the header from partials/header.hbs --}}
+{{> header}}
+
+{{!-- Show the cover photo --}}
+<header class="cover" {{#if @settings.cover}}style="background-image: url('{{url @settings.cover}}');"{{/if}}>
+    <div class="content">
+        <h1 class="title">Page Not Found</h1>
+        <div class="subtitle">The page you requested could not be found</div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-push-2 col-sm-10 col-sm-push-1 text-xs-center">
+            <h2>Search</h2>
+            <p>Try searching for what you’re looking for.</p>
+
+            {{!-- Include the search form from partials/search-form.hbs --}}
+            {{> search-form}}
+        </div>
+    </div>
+</div>
+
+{{!-- Include the footer from partials/footer.hbs --}}
+{{> footer}}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{!-- Meta title & description --}}
+    <title>{{@meta.title}}</title>
+    <meta name="description" content="{{@meta.description}}">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {{!-- This helper is required in every theme. It needs to be in the <head> --}}
+    {{postleaf_head}}
+
+    {{!-- Favicon --}}
+    <link rel="shortcut icon" href="{{url @settings.favicon}}">
+
+    {{!-- Load Bootstrap and fonts from CDN --}}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,700%7CLato:300,700">
+
+    {{!-- Load our own stylesheet. The `theme_url` helper points to the theme's folder. --}}
+    <link rel="stylesheet" href="{{theme_url 'css/theme.css'}}">
+</head>
+
+{{!-- The `body_class` helper outputs useful classes for styling --}}
+<body class="{{body_class}}">
+
+    {{!-- Include the site's navigation from partials/navigation.hbs --}}
+    {{> navigation}}
+
+    <div class="body-wrap">
+
+        {{!-- Show the website logo if one has been uploaded in Settings --}}
+        {{#if @settings.logo}}
+            <a href="{{url}}" class="logo">
+                <img src="{{url @settings.logo}}" alt="{{@settings.title}}">
+            </a>
+        {{/if}}
+
+        {{!-- Menu button --}}
+        <a href="#" class="nav-toggle">Menu</a>

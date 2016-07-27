@@ -1,0 +1,9 @@
+{
+    "name": "Range",
+    "description": "The default theme for Postleaf, inspired by Casper",
+    "version": "1.0.0",
+    "requires": "1.0.0",
+    "author": "Cory LaViska",
+    "license": "GPLv3",
+    "url": "https://www.postleaf.org/"
+}

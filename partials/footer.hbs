@@ -1,0 +1,30 @@
+        {{!-- Footer --}}
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-6">
+                        {{!-- Link to the homepage and show copyright --}}
+                        <a href="{{url}}">{{@settings.title}}</a> &copy;{{date format="%Y"}}
+                    </div>
+                    <div class="col-xs-6 text-xs-right">
+                        {{!-- Shameless plug to the best publishing platform in the world --}}
+                        Published with <a href="https://www.postleaf.org/">Postleaf</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div> {{!-- .body-wrap --}}
+
+    {{!-- This helper is required in every theme. It should exist just before the </body> tag --}}
+    {{postleaf_foot}}
+
+    {{!-- Load jQuery, Tether, and Bootstrap via CDN --}}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.3/js/tether.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
+
+    {{!-- Load the theme's JavaScript. The `theme_url` helper points to the theme folder --}}
+    <script src="{{theme_url 'js/theme.js'}}"></script>
+</body>
+</html>
