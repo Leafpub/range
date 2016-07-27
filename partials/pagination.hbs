@@ -1,25 +1,27 @@
 {{!-- Switch to the pagination context --}}
 {{#pagination}}
-    <div class="post-pagination">
-        {{!-- Previous page --}}
-        {{#if previous_page_url}}
-            <div class="previous">
-                <a href="{{previous_page_url}}">Newer Posts</a>
-            </div>
-        {{/if}}
+    {{#is total_pages '>' 1}}
+        <div class="post-pagination">
+            {{!-- Previous page --}}
+            {{#if previous_page_url}}
+                <div class="previous">
+                    <a href="{{previous_page_url}}">Newer Posts</a>
+                </div>
+            {{/if}}
 
-        {{!-- Current page --}}
-        {{#is total_pages '>' 1}}
-            <div class="current">
-                Page {{number current_page}} of {{number total_pages}}
-            </div>
-        {{/is}}
+            {{!-- Current page --}}
+            {{#is total_pages '>' 1}}
+                <div class="current">
+                    Page {{number current_page}} of {{number total_pages}}
+                </div>
+            {{/is}}
 
-        {{!-- Next page --}}
-        {{#if next_page_url}}
-            <div class="next">
-                <a href="{{next_page_url}}">Older Posts</a>
-            </div>
-        {{/if}}
-    </div>
+            {{!-- Next page --}}
+            {{#if next_page_url}}
+                <div class="next">
+                    <a href="{{next_page_url}}">Older Posts</a>
+                </div>
+            {{/if}}
+        </div>
+    {{/is}}
 {{/pagination}}
