@@ -504,6 +504,11 @@ footer a:hover {
 .loop .more:hover {
     text-decoration: none;
     color: inherit;
+    transition: .2s color;
+}
+
+.loop .title a:hover {
+    color: black;
 }
 
 .loop .meta {
