@@ -9,7 +9,7 @@ $(function() {
 
     // Close menu when clicking outside it
     $(document).on('click touchstart', function(event) {
-        if(!$(event.target).parents().andSelf().is('.nav-toggle, .nav')) {
+        if(!$(event.target).parents().addBack().is('.nav-toggle, .nav')) {
             $('html').removeClass('nav-open');
         }
     });
