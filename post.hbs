@@ -29,6 +29,13 @@
                             </span>
                         {{/if}}
 
+                        {{!-- Sticky badge --}}
+                        {{#if sticky}}
+                            <span class="sticky">
+                                Sticky
+                            </span>
+                        {{/if}}
+
                         {{!-- Post date --}}
                         <span class="date">
                             {{date format="%B %e, %Y at %l:%M%P"}}
