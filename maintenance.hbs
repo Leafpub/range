@@ -1,0 +1,17 @@
+{{> header}}
+    <header class="cover" {{#if @settings.cover}}style="background-image: url('{{url @settings.cover}}');"{{/if}}>
+        <div class="content">
+            <h1 class="title">{{L 'maintenance'}}</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <div>{{content}}</div>
+            </div>
+        </div>
+    </div>
+
+{{!-- Include the footer from partials/footer.hbs --}}
+{{> footer}}

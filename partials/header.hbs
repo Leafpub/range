@@ -27,7 +27,9 @@
 <body class="{{body_class}}">
 
     {{!-- Include the site's navigation from partials/navigation.hbs --}}
-    {{> navigation}}
+    {{#is @settings.maintenance 'off'}} 
+        {{> navigation}}
+    {{/is}}
 
     <div class="body-wrap">
 
@@ -39,4 +41,6 @@
         {{/if}}
 
         {{!-- Menu button --}}
-        <a href="#" class="nav-toggle">Menu</a>
+        {{#is @settings.maintenance 'off'}}
+            <a href="#" class="nav-toggle">Menu</a>
+        {{/is}}
