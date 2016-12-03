@@ -1,6 +1,6 @@
 /*//////////////////////////////////////////////////////////////////////////////////////////////////
 //
-//  “Range“ for Postleaf
+//  “Range“ for Leafpub
 //
 //  Inspired with <3 by Casper
 //
@@ -89,7 +89,7 @@ a:hover {
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////
-// Required classes for alignment. We need these because Postleaf generates classes
+// Required classes for alignment. We need these because Leafpub generates classes
 // instead of inline styles for alignment.
 //////////////////////////////////////////////////////////////////////////////////////////////////*/
 
@@ -132,11 +132,11 @@ img.align-right,
 // Editor guidelines (overrides)
 //////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-body .cover [data-postleaf-id="post:title"]:hover {
+body .cover [data-leafpub-id="post:title"]:hover {
     outline-color: rgba(255, 255, 255, .5);
 }
 
-body .cover [data-postleaf-id="post:title"]:focus {
+body .cover [data-leafpub-id="post:title"]:focus {
     outline-color: white;
 }
 
