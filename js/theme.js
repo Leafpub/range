@@ -35,7 +35,7 @@ $(function() {
     $('.post-share-icon').on('click', function(event) {
         event.preventDefault();
         // Only open if we're not in the editor
-        if(!window.postleaf) {
+        if(!window.leafpub) {
             window.open($(this).attr('href'), 'share', 'width=550,height=285');
         }
     });
