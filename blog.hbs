@@ -2,7 +2,7 @@
 {{> header}}
 
 {{!-- Show the cover photo --}}
-<header class="cover" {{#if @settings.cover}}style="background-image: url('{{url @settings.cover}}');"{{/if}}>
+<header class="cover" {{#if @settings.cover}}style="background-image: url('{{img @settings.cover}}');"{{/if}}>
     <div class="content">
         {{!-- Site title & tagline --}}
         <h1 class="title">{{@settings.title}}</h1>
@@ -17,7 +17,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 push-md-2 col-sm-10 push-sm-1">
+        <div class="col-md-8 push-md-2 col-sm-10 push-sm-1 col-12">
             {{!-- Include the post loop from partials/loop.hbs --}}
             {{> loop}}
 

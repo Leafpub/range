@@ -4,7 +4,7 @@
 {{!-- Switch to the tag context --}}
 {{#tag}}
     {{!-- Show the cover photo --}}
-    <header class="cover" {{#if cover}}style="background-image: url('{{url cover}}');"{{/if}}>
+    <header class="cover" {{#if cover}}style="background-image: url('{{img cover}}');"{{/if}}>
         <div class="content">
             <h1 class="title">{{name}}</h1>
         </div>
@@ -13,7 +13,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8 push-md-2 col-sm-10 push-sm-1">
+        <div class="col-md-8 push-md-2 col-sm-10 push-sm-1 col-12">
             <div class="tag">
                 {{!-- Switch to the tag context --}}
                 {{#tag}}
