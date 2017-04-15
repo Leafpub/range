@@ -4,7 +4,7 @@
 {{!-- Switch to the post context --}}
 {{#post}}
     {{!-- Show the post image if there is one --}}
-    <header class="cover" {{#if image}}style="background-image: url('{{url image}}');"{{/if}}>
+    <header class="cover" {{#if image}}style="background-image: url('{{img image}}');"{{/if}}>
         <div class="content">
             {{!-- The post title should have editable="true" here --}}
             <h1 class="title">{{title editable="true"}}</h1>
@@ -13,7 +13,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 push-md-2 col-sm-10 push-sm-1">
+            <div class="col-md-8 push-md-2 col-sm-10 push-sm-1 col-12">
                 {{!-- The `post_class` helper outputs useful classes for styling --}}
                 <article class="{{post_class}}">
                     <p class="description">
@@ -72,7 +72,7 @@
             </div>
         </div>
 
-        <div class="col-md-8 push-md-2 col-sm-10 push-sm-1">
+        <div class="col-md-8 push-md-2 col-sm-10 push-sm-1 col-12">
                 <div class="footer row">
                     {{!-- Author --}}
                     <div class="author col-md-8">
@@ -81,7 +81,7 @@
                             {{!-- Avatar --}}
                             {{#if avatar}}
                                 <a href="{{author_url}}">
-                                   <img class="author-avatar" src="{{url avatar}}" alt="{{name}}">
+                                   <img class="author-avatar" src="{{img avatar}}" alt="{{name}}">
                                 </a>
                             {{/if}}
 
