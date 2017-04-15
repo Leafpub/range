@@ -4,7 +4,7 @@
 {{!-- Switch to the author context --}}
 {{#author}}
     {{!-- Show the cover photo --}}
-    <header class="cover" {{#if cover}}style="background-image: url('{{url cover}}');"{{/if}}>
+    <header class="cover" {{#if cover}}style="background-image: url('{{img cover}}');"{{/if}}>
         <div class="content">
             <h1 class="title">{{name}}</h1>
         </div>
@@ -19,7 +19,7 @@
                 {{#author}}
                     {{!-- Avatar --}}
                     {{#if avatar}}
-                        <img class="avatar" src="{{url avatar}}" alt="Avatar">
+                        <img class="avatar" src="{{img avatar}}" alt="Avatar">
                     {{/if}}
 
                     {{!-- Author details --}}
